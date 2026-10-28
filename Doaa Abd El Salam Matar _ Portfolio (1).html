@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Doaa Abd El Salam Matar | Portfolio</title>
+<style>
+:root{--bg:#fbf7ff;--card:#ffffff;--text:#2a2038;--muted:#6b5f7d;--accent:#7c3aed;--accent2:#ec4899;--line:#eadff7;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15101f;--card:#1f1830;--text:#f1eaff;--muted:#b3a6c9;--accent:#a78bfa;--accent2:#f472b6;--line:#33294a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#15101f;--card:#1f1830;--text:#f1eaff;--muted:#b3a6c9;--accent:#a78bfa;--accent2:#f472b6;--line:#33294a;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+body{margin:0;font-weight:700;font-style:italic;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.65}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:10px 12px}
+nav a{color:var(--text);text-decoration:none;font-size:14px;white-space:nowrap;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line)}
+section{max-width:760px;margin:0 auto;padding:44px 20px}
+h2{font-size:26px;margin:0 0 14px;color:var(--accent)}
+#home{text-align:center;padding-top:64px}
+.avatar{width:96px;height:96px;border-radius:50%;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+h1{font-size:clamp(28px,8vw,44px);line-height:1.15;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 20px}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;text-decoration:none;padding:12px 22px;border-radius:12px;font-weight:600;margin:4px}
+.btn.alt{background:var(--card);color:var(--text);border:1px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:14px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--muted)}
+.tag{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;background:var(--line);color:var(--accent);margin-bottom:8px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.grid .card{margin:0}
+.steps{border-left:3px solid var(--accent);padding-left:18px;margin-left:6px}
+.steps .card{position:relative}
+.steps .card::before{content:"";position:absolute;left:-28px;top:22px;width:13px;height:13px;border-radius:50%;background:var(--accent2);border:3px solid var(--bg)}
+.link{display:inline-block;margin-top:10px;color:var(--accent);font-weight:600;text-decoration:none}
+.soon{display:inline-block;margin-top:10px;color:var(--muted);font-size:14px}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:24px 20px 40px}
+</style>
+</head>
+<body>
+<nav>
+<a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#journey">Journey</a><a href="#assignments">Assignments</a><a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+<div class="avatar">D</div>
+<h1>Hi, I'm <span style="font-weight:800;font-style:italic">Doaa Abd El Salam Matar</span></h1>
+<p class="sub">Software Engineering Student · Faculty of Computers and Information</p>
+<p>Welcome to my portfolio! This is where I share what I'm learning, what I'm building, and where I'm heading as a future software engineer.</p>
+<a class="btn" href="#assignments">See my work</a><a class="btn alt" href="#contact">Say hello</a>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+<p>I'm a student at the Faculty of Computers and Information, specializing in Software Engineering. I'm curious about how apps and websites are built, and I enjoy turning ideas into something people can actually use.</p>
+<p style="margin-top:10px">I'm at the start of my programming journey, and I'm proud of it. Every assignment teaches me something new, and I'm focused on building strong foundations, one project at a time.</p>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills I Want to Develop</h2>
+<div class="grid" id="skillsGrid"></div>
+</section>
+
+<section id="journey">
+<h2>My Learning Journey</h2>
+<div class="steps" id="journeyList"></div>
+</section>
+
+<section id="assignments">
+<h2>My University Assignments</h2>
+<p class="sub">Projects and coursework from my studies. New ones are added as I complete them.</p>
+<div id="assignList"></div>
+</section>
+
+<section id="contact">
+<h2>Contact Me</h2>
+<div class="card">
+<p>I'd love to hear from you, whether it's about a project, a study group, an opportunity, or just to connect with a fellow learner.</p>
+<div id="contactLinks" style="margin-top:14px"></div>
+</div>
+</section>
+
+<footer>© <span id="yr"></span> Doaa Abd El Salam Matar · Built with curiosity</footer>
+
+<script>
+/* ===== EDIT AREA (ask Claude to change these for you) ===== */
+var CONTACT = { email: "", linkedin: "", github: "" };
+
+var SKILLS = [
+ {t:"Programming Fundamentals",d:"Writing clean, logical code and solving problems step by step."},
+ {t:"Web Development",d:"Building responsive websites with HTML, CSS and JavaScript."},
+ {t:"Data Structures & Algorithms",d:"Understanding how to organize data and write efficient solutions."},
+ {t:"Databases & SQL",d:"Designing tables and querying data to power real applications."},
+ {t:"Git & GitHub",d:"Tracking changes and collaborating on code like a professional."},
+ {t:"Software Design & Teamwork",d:"Planning projects, UML diagrams, and working well in a team."}
+];
+
+var JOURNEY = [
+ {w:"Step 1",t:"Starting Software Engineering",d:"Began my degree at the Faculty of Computers and Information and discovered how many things software can do."},
+ {w:"Step 2",t:"Learning the Basics",d:"Practicing core programming concepts: variables, loops, functions, and problem solving."},
+ {w:"Step 3",t:"Building My First Projects",d:"Turning classroom assignments into small working programs and learning from every bug."},
+ {w:"Next",t:"Growing Every Day",d:"Exploring web development, databases, and teamwork, with the goal of building real-world applications."}
+];
+
+/* Add new assignments at the TOP of this list. Leave link empty "" if there is no file yet. */
+var ASSIGNMENTS = [
+ {title:"Sample Assignment 1: Introduction to Programming",course:"Programming",desc:"A placeholder example. Replace with a real assignment that solves a problem using basic programming concepts.",link:""},
+ {title:"Sample Assignment 2: Database Design",course:"Databases",desc:"A placeholder example. Replace with a real assignment that designs tables and relationships for a small system.",link:""},
+ {title:"Sample Assignment 3: Software Requirements",course:"Software Engineering",desc:"A placeholder example. Replace with a real assignment that gathers requirements and describes a system.",link:""}
+];
+/* ========================================================= */
+
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function safeUrl(u){return /^https?:\/\//i.test(u)?u:""}
+
+document.getElementById("skillsGrid").innerHTML=SKILLS.map(function(s){return '<div class="card"><h3>'+esc(s.t)+'</h3><p>'+esc(s.d)+'</p></div>'}).join("");
+document.getElementById("journeyList").innerHTML=JOURNEY.map(function(s){return '<div class="card"><span class="tag">'+esc(s.w)+'</span><h3>'+esc(s.t)+'</h3><p>'+esc(s.d)+'</p></div>'}).join("");
+document.getElementById("assignList").innerHTML=ASSIGNMENTS.map(function(a){
+ var u=safeUrl(a.link);
+ var l=u?'<a class="link" href="'+esc(u)+'" target="_blank" rel="noopener">Open file →</a>':'<span class="soon">File link coming soon</span>';
+ return '<div class="card"><span class="tag">'+esc(a.course)+'</span><h3>'+esc(a.title)+'</h3><p>'+esc(a.desc)+'</p>'+l+'</div>'}).join("");
+
+var cl=[];
+if(CONTACT.email)cl.push('<a class="btn" href="mailto:'+esc(CONTACT.email)+'">Email me</a>');
+if(safeUrl(CONTACT.linkedin))cl.push('<a class="btn alt" target="_blank" rel="noopener" href="'+esc(CONTACT.linkedin)+'">LinkedIn</a>');
+if(safeUrl(CONTACT.github))cl.push('<a class="btn alt" target="_blank" rel="noopener" href="'+esc(CONTACT.github)+'">GitHub</a>');
+document.getElementById("contactLinks").innerHTML=cl.length?cl.join(""):'<span class="soon">My contact details will be added here very soon.</span>';
+document.getElementById("yr").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
